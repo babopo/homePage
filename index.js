@@ -23,6 +23,15 @@ app.get('/', (req, res, next) => {
     }
 
 })
+app.get('/resume', (req, res, next) => {
+    if(req.protocol === 'http') {
+        res.redirect("https://limbotech.top/resume")
+    } else {
+        // 必须写在else里
+        res.sendFile(__dirname + '/static/resume.pdf')
+    }
+
+})
 
 
 
