@@ -17,8 +17,10 @@ app.set('view engine', 'pug')
 app.get('/', (req, res, next) => {
     if(req.protocol === 'http') {
         res.redirect("https://limbotech.top")
+    } else {
+        // 必须写在else里
+        res.render('index.pug', {title: 'Limbo'})
     }
-    res.render('index.pug', {title: 'Limbo'})
 
 })
 
