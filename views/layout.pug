@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        title= title
+        link(rel="stylesheet" href= "/static/css/index.css")
+        //- href相当于是a标签中的路劲，会替换url中第一个/后面的内容
+        block links
+    body
+        block head
+        block main
+            h1= "Hello World"
+        block foot
+    block scripts

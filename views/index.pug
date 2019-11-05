@@ -1,0 +1,22 @@
+extends layout.pug
+
+block main
+    .container
+        h3 个人项目展示
+        .demo
+            a(href="https://limbotech.top:7001") 简陋聊天室
+            p.description 有完整的账户系统，但是只有一个公共聊天界面，原生js，后端返回模板，实现基本功能
+        .demo.demo2
+            a(href="https://limbotech.top:8000") Vue版聊天室
+            p.description 前后端分离，完整的账户系统，同一个页面实现公共区域和私聊，应该没有明显的bug，勉强算是一个个人项目
+        .demo.demo3
+            a(href="https://limbotech.top:9000") React个人组件库
+            p.description 仿照Ant Design实现了十多个可复用的小组件，有基本的接口和样式，时间关系没有做非常复杂的组件，但是有几个还是比较有代表性
+        .demo.demo4
+            a(href="https://babopo.github.io/") 个人博客
+            p.description 一些前端方面的零碎学习记录，待整理
+
+block foot
+    .footer Copyright &copy; 2019 Limbo
+    .footer
+        a(href="http://www.beian.miit.gov.cn") 浙 ICP 备 19041414 号

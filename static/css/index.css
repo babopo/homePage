@@ -1,0 +1,56 @@
+.container {
+    position: fixed;
+    width: 400px;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.demo {
+    border-bottom: 2px solid;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: show 1s 1 both;
+}
+.demo:hover .description {
+    background-color: rgba(5, 255, 5, 0.2);
+}
+
+.demo2 {
+    animation-delay: .3s;
+}
+.demo3 {
+    animation-delay: .6s;
+}
+.demo4 {
+    animation-delay: .9s;
+}
+
+
+
+@keyframes show {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.description {
+    font-size: 14px;
+}
+
+
+
+.footer {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer + .footer {
+    bottom: 5px;
+}
