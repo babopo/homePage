@@ -15,24 +15,19 @@ app.use('/static', express.static(__dirname + '/static'))
 app.set('view engine', 'pug')
 
 app.get('/', (req, res, next) => {
-    if(req.protocol === 'http') {
-        res.redirect("https://limbotech.top")
-    } else {
-        // 必须写在else里
-        res.render('index.pug', {title: 'Limbo'})
-    }
-
+    res.render('index.pug', {title: 'Limbo'})
 })
 app.get('/resume', (req, res, next) => {
-    if(req.protocol === 'http') {
-        res.redirect("https://limbotech.top/resume")
-    } else {
-        // 必须写在else里
-        res.sendFile(__dirname + '/static/resume.pdf')
-    }
-
+    res.sendFile(__dirname + '/static/resume.pdf')
 })
 
+
+app.get('*', (req, res, next) => {
+    // http访问转为https
+    if(req.protocol === "http") {
+        res.redirect("https://limbotech.top" + req.path)
+    }
+})
 
 
 httpsServer.listen(443)
