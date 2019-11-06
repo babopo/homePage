@@ -14,6 +14,16 @@ app.use('/static', express.static(__dirname + '/static'))
 //设置使用views文件夹下的pug模板
 app.set('view engine', 'pug')
 
+// 放在前面过滤
+app.get('*', (req, res, next) => {
+    // http访问转为https
+    if(req.protocol === "http") {
+        res.redirect("https://limbotech.top" + req.path)
+    }
+    next()
+})
+
+
 app.get('/', (req, res, next) => {
     res.render('index.pug', {title: 'Limbo'})
 })
@@ -22,12 +32,6 @@ app.get('/resume', (req, res, next) => {
 })
 
 
-app.get('*', (req, res, next) => {
-    // http访问转为https
-    if(req.protocol === "http") {
-        res.redirect("https://limbotech.top" + req.path)
-    }
-})
 
 
 httpsServer.listen(443)
