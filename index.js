@@ -30,6 +30,9 @@ app.get('/', (req, res, next) => {
 app.get('/resume', (req, res, next) => {
     res.sendFile(__dirname + '/static/resume.pdf')
 })
+app.get('/cv', (req, res, next) => {
+    res.sendFile(__dirname + '/static/cv.pdf')
+})
 
 
 
