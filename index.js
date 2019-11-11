@@ -35,6 +35,11 @@ app.get('/cv', (req, res, next) => {
 })
 
 
+app.get('/test', (req, res, next) => {
+    res.sendFile(__dirname + '/static/test.jpg')
+})
+
+
 
 
 httpsServer.listen(443)
